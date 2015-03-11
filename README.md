@@ -20,14 +20,31 @@ val extractor = new OpenNlpExtractor()
 
 val inputText = "This is a piece of text. There are several sentences. There may be something about a cotton turquoise dress"
 
-extractor.extractInterestingPhrases(inputText).foreach { phrase => 
+extractor.extractInterestingPhrases(inputText).foreach { phrase =>
   println(phrase)
 }
 ```
 
+## Synonyms
+
+This library provides a very simple synonym generator based on [WordNet](http://wordnet.princeton.edu). This requires that the appropriate [Wordnet Dictionary files](http://wordnetcode.princeton.edu/3.0/WNdb-3.0.tar.gz) be downloaded, and installed separately.
+
+Synonyms are generated for a given word, when used as a particular Part of Speech.
+
+```scala
+val synonymProvider = new WordnetSynonymProvider(pathToWordnetDictionaryFiles)
+val synonyms = synonymProvider.getSynonyms("pullover", PartOfSpeech.Noun)
+```
+
+Building on this generator, and in conjunction with Noun Phrase Extraction, a class is provided to generate Synonym Phrases
+
+```scala
+val synonymPhraseGenerator = new OpenNlpSynonymPhraseGenerator(synonymProvider)
+synonymPhraseGenerator.generateSynonyms("cotton summer dress")
+```
 
 ## License
 
 Copyright 2015 Gilt Groupe, Inc.
 
-Licensed under the MIT License. 
+Licensed under the MIT License.
