@@ -32,7 +32,7 @@ This library provides a very simple synonym generator based on [WordNet](http://
 Synonyms are generated for a given word, when used as a particular Part of Speech.
 
 ```scala
-val synonymProvider = new WordnetSynonymProvider(pathToWordnetDictionaryFiles)
+val synonymProvider = new WordnetSynonymProvider(new java.io.File("./wordnet/dict"))
 val synonyms = synonymProvider.getSynonyms("pullover", PartOfSpeech.Noun)
 ```
 
