@@ -12,11 +12,13 @@ object Inflector {
     InflectorRule("(quiz)zes$", "$1"),
     InflectorRule("(matr)ices$", "$1ix"),
     InflectorRule("(vert|ind)ices$", "$1ex"),
-    InflectorRule("^(ox)en", "$1"),
+    InflectorRule("^(ox)en$", "$1"),
     InflectorRule("(alias|status)$", "$1"),
     InflectorRule("(alias|status)es$", "$1"),
+    InflectorRule("criteria$", "criterion"),
     InflectorRule("(octop|vir)us$", "$1us"),
     InflectorRule("(octop|vir)i$", "$1us"),
+    InflectorRule("(octop|vir)uses$", "$1us"),
     InflectorRule("(cris|ax|test)es$", "$1is"),
     InflectorRule("(cris|ax|test)is$", "$1is"),
     InflectorRule("(shoe|toe|tie)s$", "$1"),
@@ -46,7 +48,9 @@ object Inflector {
     InflectorRule("(vert|ind)(ex|ices)$", "$1ices"),
     InflectorRule("^(ox)(en)?$", "$1en"),
     InflectorRule("(alias|status)(es)?$", "$1es"),
-    InflectorRule("(octop|vir)(us|i)$", "$1i"),
+    InflectorRule("criterion$", "criteria"),
+    InflectorRule("octopus$", "octopuses"),
+    InflectorRule("virus$", "viruses"),
     InflectorRule("(cris|ax|test)(is|es)$", "$1es"),
     InflectorRule("(shoe|tie|sleeve)(s)?$", "$1s"),
     InflectorRule("(polo)(s)?$", "$1s"),
@@ -113,7 +117,7 @@ object Inflector {
     InflectorRule("(solitaire|chronograph|shift|henley|gemstone|center|base|zip|ceiling|waistband|ankle|jacquard|teardrop|lace-up|multi|a-line|coat|suit)(s)?$", "$1s"),
     InflectorRule("(sofa|peplum|dome|emerald|halter|round|sole|oval|disc|waistband|heart|ankle|platform|jersey)(s)?$", "$1s"),
     InflectorRule("(mini|pan|fireplace|leg|belt|a-line|loop|wrap|drop|ring|trouser|hem|clock|shoulder|belt|lamp|flat|rug|band|tankini|bikini|pearl)(s)?$", "$1s"),
-    InflectorRule("(ottoman|stud|bow|wall|book|holder|curtain)(s)?$", "$1s")
+    InflectorRule("(table|ottoman|stud|bow|wall|book|holder|curtain|blanket)(s)?$", "$1s")
   )
 
 

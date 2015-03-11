@@ -25,6 +25,9 @@ class InflectorTest extends FlatSpec with Matchers {
 
   val SingularToPlural =
     Map(
+      "table" -> "tables",
+      "blanket" -> "blankets",
+      "criterion" -> "criteria",
       "lamp" -> "lamps",
       "flat" -> "flats",
       "rug" -> "rugs",
@@ -112,7 +115,8 @@ class InflectorTest extends FlatSpec with Matchers {
       "stud" -> "studs",
       "book" -> "books",
       "holder" -> "holders",
-      "curtain" -> "curtains"
+      "curtain" -> "curtains",
+      "octopus" -> "octopuses"
     )
 
   it should "correctly create the plural of several examples..." in {
